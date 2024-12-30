@@ -35,9 +35,3 @@ class Calculator {
         return this.result;
     }
 }
-
-
-
-
-
-AAAAAAaafghfg
