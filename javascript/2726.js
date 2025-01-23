@@ -38,4 +38,4 @@ class Calculator {
 
 
 // Example usage:const calc = new Calculator(10);
-cond
+const result = calc.add(5).subtract(2).multiply(3).divide(2).power(2).getResult();
