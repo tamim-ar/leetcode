@@ -38,4 +38,4 @@ class Calculator {
 
 
 // Example usage:const calc = new Calculator(10);
-console.log(calc.a
+console.log(cal
