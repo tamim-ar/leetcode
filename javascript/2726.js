@@ -5,37 +5,33 @@ class Calculator {
 
     add(value) {
         this.result += value;
-        return this; 
+        return this; // Return current instance for method chaining
     }
 
     subtract(value) {
         this.result -= value;
-        return this; 
+        return this; // Return current instance for method chaining
     }
 
     multiply(value) {
         this.result *= value;
-        return this; 
+        return this; // Return current instance for method chaining
     }
 
     divide(value) {
         if (value === 0) {
-            throw "Division by zero is not allowed"; 
+            throw "Division by zero is not allowed"; // Handle division by zero
         }
         this.result /= value;
-        return this; 
+        return this; // Return current instance for method chaining
     }
 
     power(value) {
         this.result = Math.pow(this.result, value);
-        return this; 
+        return this; // Return current instance for method chaining
     }
 
     getResult() {
         return this.result;
     }
 }
-
-
-// Example usage:const calc = new Calculator(10);
-const result = calc.add(5).subtract(2).multiply(3).divide(2).power(2).getResult(); 
