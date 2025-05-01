@@ -39,5 +39,4 @@ class Calculator {
 
 // Example usage:const calc = new Calculator(10);
 console.log(calc.add(5).subtract(2).multiply(3).divide(2).power(2).getResult()); // Output: 169.0
-// This code defines a Calculator class with methods for basic arithmetic operations and chaining.      
-// The example usage demonstrates how to create an instance of the Calculator and perform a series of operations, returning the final result.   
+// This code defines a Calculator class with methods for basic arithmetic operations and chaining.        
