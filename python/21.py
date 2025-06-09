@@ -1,3 +1,6 @@
+def ListNode(val, next=None):
+    raise NotImplementedError
+
 class Solution(object):
     def mergeTwoLists(self, list1, list2):
         dummy = ListNode(0)
