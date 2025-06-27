@@ -1,32 +1,32 @@
-from itertools import combinations_with_replacement
+from collections import Counter, deque
 
 class Solution:
     def longestSubsequenceRepeatedK(self, s: str, k: int) -> str:
-        from collections import Counter
-
-        counter = Counter(s)
-        chars = [ch for ch in counter if counter[ch] >= k]
-        chars.sort(reverse=True)
-
         def is_valid(sub):
-            i = 0
-            cnt = 0
-            for ch in s:
-                if ch == sub[i]:
+            i = j = cnt = 0
+            while j < len(s):
+                if s[j] == sub[i]:
                     i += 1
                     if i == len(sub):
                         cnt += 1
-                        i = 0
                         if cnt == k:
                             return True
+                        i = 0
+                j += 1
             return False
 
-        max_len = len(s) // k
+        counter = Counter(s)
+        chars = [c for c in counter if counter[c] >= k]
+        chars.sort(reverse=True)
+
+        queue = deque([""])
         res = ""
-        for l in range(1, max_len + 1):
-            for comb in combinations_with_replacement(chars, l):
-                for perm in set(permutations(comb)):
-                    sub = ''.join(perm)
-                    if is_valid(sub) and (len(sub) > len(res) or (len(sub) == len(res) and sub > res)):
-                        res = sub
+        while queue:
+            cur = queue.popleft()
+            for ch in chars:
+                new_str = cur + ch
+                if is_valid(new_str):
+                    queue.append(new_str)
+                    if len(new_str) > len(res) or (len(new_str) == len(res) and new_str > res):
+                        res = new_str
         return res
