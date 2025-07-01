@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def possibleStringCount(self, word: str) -> int:
         n = len(word)
@@ -15,6 +17,20 @@ class Solution:
             i += 1
 
         return total
+
+    def modifiedMatrix(self, matrix: List[List[int]]) -> List[List[int]]:
+        m, n = len(matrix), len(matrix[0])
+        # Find column maximums
+        col_max = [max(matrix[i][j] for i in range(m)) for j in range(n)]
+        
+        # Replace -1s with column maximums
+        answer = [row[:] for row in matrix]
+        for i in range(m):
+            for j in range(n):
+                if answer[i][j] == -1:
+                    answer[i][j] = col_max[j]
+        
+        return answer
 
 
 print(Solution().possibleStringCount("abbcccc"))
