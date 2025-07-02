@@ -1,42 +1,42 @@
-from typing import List
+import functools
 
 class Solution:
-    def maximumPoints(self, edges: List[List[int]], coins: List[int], k: int) -> int:
-        n = len(coins)
-        graph = [[] for _ in range(n)]
-        
-        for u, v in edges:
-            graph[u].append(v)
-            graph[v].append(u)
-            
-        def dfs(node: int, parent: int, div: int) -> int:
-            if div >= 14:  # Since coins[i] <= 10^4, after 14 divisions it becomes 0
-                return 0
-                
-            coin = coins[node] >> div
-            # Option 1: Subtract k
-            ans1 = coin - k
-            # Option 2: Divide by 2
-            ans2 = coin >> 1
-            
-            for child in graph[node]:
-                if child != parent:
-                    ans1 += dfs(child, node, div)
-                    ans2 += dfs(child, node, div + 1)
-                    
-            return max(ans1, ans2)
-            
-        return dfs(0, -1, 0)
+    def possibleStringCount(self, word: str, k: int) -> int:
+        MOD = 1_000_000_007
+        groups = self._getConsecutiveLetters(word)
+        totalCombinations = functools.reduce(lambda subtotal, group:
+                                             subtotal * group % MOD, groups)
+        if k <= len(groups):
+            return totalCombinations
+
+        dp = [0] * k
+        dp[0] = 1
+
+        for i, group in enumerate(groups):
+            newDp = [0] * k
+            windowSum = 0
+            for j in range(i, k):
+                newDp[j] = (newDp[j] + windowSum) % MOD
+                windowSum = (windowSum + dp[j]) % MOD
+                if j >= group:
+                    windowSum = (windowSum - dp[j - group] + MOD) % MOD
+            dp = newDp
+
+        return (totalCombinations - sum(dp)) % MOD
+
+    def _getConsecutiveLetters(self, word: str) -> list[int]:
+        groups = []
+        group = 1
+        for i in range(1, len(word)):
+            if word[i] == word[i - 1]:
+                group += 1
+            else:
+                groups.append(group)
+                group = 1
+        groups.append(group)
+        return groups
 
 def _driver():
-    param_1 = [[0,1],[0,2],[1,2]]
-    param_2 = [5,2,1]
-    param_3 = 6
-    sol = Solution()
-    ret = sol.maximumPoints(param_1, param_2, param_3)
-    print(ret)
-
-_driver()
     param_1 = "aabbcc"
     param_2 = 5
     sol = Solution()
