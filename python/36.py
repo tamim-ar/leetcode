@@ -15,3 +15,4 @@ class Solution:
                 cols[c].add(val)
                 boxes[(r // 3) * 3 + (c // 3)].add(val)
         return True
+    
