@@ -1,22 +1,39 @@
 class Solution:
     def solveSudoku(self, board: list[list[str]]) -> None:
-        def isValid(r, c, val):
-            for i in range(9):
-                if board[r][i] == val or board[i][c] == val or board[3*(r//3)+i//3][3*(c//3)+i%3] == val:
-                    return False
-            return True
+        rows = [set() for _ in range(9)]
+        cols = [set() for _ in range(9)]
+        boxes = [set() for _ in range(9)]
+        empty = []
 
-        def solve():
-            for r in range(9):
-                for c in range(9):
-                    if board[r][c] == '.':
-                        for val in map(str, range(1, 10)):
-                            if isValid(r, c, val):
-                                board[r][c] = val
-                                if solve():
-                                    return True
-                                board[r][c] = '.'
-                        return False
-            return True
+        for r in range(9):
+            for c in range(9):
+                val = board[r][c]
+                if val == '.':
+                    empty.append((r, c))
+                else:
+                    rows[r].add(val)
+                    cols[c].add(val)
+                    boxes[(r // 3) * 3 + (c // 3)].add(val)
 
-        solve()
+        def dfs(i):
+            if i == len(empty):
+                return True
+            r, c = empty[i]
+            b = (r // 3) * 3 + (c // 3)
+            for val in map(str, range(1, 10)):
+                if val not in rows[r] and val not in cols[c] and val not in boxes[b]:
+                    board[r][c] = val
+                    rows[r].add(val)
+                    cols[c].add(val)
+                    boxes[b].add(val)
+
+                    if dfs(i + 1):
+                        return True
+
+                    board[r][c] = '.'
+                    rows[r].remove(val)
+                    cols[c].remove(val)
+                    boxes[b].remove(val)
+            return False
+
+        dfs(0)
