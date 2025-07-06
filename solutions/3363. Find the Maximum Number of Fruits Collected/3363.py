@@ -40,3 +40,4 @@ class Solution:
       return dp[-1][-1]
 
     return getTopLeft() + getTopRight() + getBottomLeft() - 2 * fruits[-1][-1]
+  
