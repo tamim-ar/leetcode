@@ -5,30 +5,30 @@ class Calculator {
 
     add(value) {
         this.result += value;
-        return this; // Return current instance for method chaining
+        return this; 
     }
 
     subtract(value) {
         this.result -= value;
-        return this; // Return current instance for method chaining
+        return this; 
     }
 
     multiply(value) {
         this.result *= value;
-        return this; // Return current instance for method chaining
+        return this; 
     }
 
     divide(value) {
         if (value === 0) {
-            throw "Division by zero is not allowed"; // Handle division by zero
+            throw "Division by zero is not allowed"; 
         }
         this.result /= value;
-        return this; // Return current instance for method chaining
+        return this; 
     }
 
     power(value) {
         this.result = Math.pow(this.result, value);
-        return this; // Return current instance for method chaining
+        return this; 
     }
 
     getResult() {
