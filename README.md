@@ -189,3 +189,4 @@ leetcode/
 | 151 | 2402 | [Meeting Rooms III](https://leetcode.com/problems/meeting-rooms-iii/) | Hard | [Python](/python/2402.py) |
 | 152 | 1900 | [The Earliest and Latest Rounds Where Players Compete](https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete/) | Hard | [Python](/python/1900.py) |
 | 153 | 1920 | [Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/) | Easy | [Python](/python/1920.py) |
+| 154 | 2410 | [Maximum Matching of Players With Trainers](https://leetcode.com/problems/maximum-matching-of-players-with-trainers/) | Medium | [Python](/python/2410.py) |
