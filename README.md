@@ -188,7 +188,4 @@ leetcode/
 | 150 | 3440 | [Maximum Number of Operations With the Same Score II](https://leetcode.com/problems/maximum-number-of-operations-with-the-same-score-ii/) | Medium | [Python](/python/3440.py) |
 | 151 | 2402 | [Meeting Rooms III](https://leetcode.com/problems/meeting-rooms-iii/) | Hard | [Python](/python/2402.py) |
 | 152 | 1900 | [The Earliest and Latest Rounds Where Players Compete](https://leetcode.com/problems/the-earliest-and-latest-rounds-where-players-compete/) | Hard | [Python](/python/1900.py) |
-
-
-
-## END
+| 153 | 1920 | [Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/) | Easy | [Python](/python/1920.py) |
