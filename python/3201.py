@@ -1,11 +1,12 @@
-from typing import List
-
 class Solution:
-    def maximumLength(self, nums: List[int]) -> int:
-        n = len(nums)
-        dp = [[1, 1] for _ in range(n)]
-        for i in range(1, n):
-            for j in range(i):
-                if (nums[i] + nums[j]) % 2 == (nums[j] + nums[j-1]) % 2 if j > 0 else True:
-                    dp[i][(nums[i] + nums[j]) % 2] = max(dp[i][(nums[i] + nums[j]) % 2], dp[j][(nums[j] + nums[j-1]) % 2 if j > 0 else (nums[i] + nums[j]) % 2] + 1)
-        return max(max(row) for row in dp)
+  def maximumLength(self, nums: list[int]) -> int:
+    # dp[i][j] := the maximum length of a valid subsequence, where the last
+    # number mod k equal to i and the next desired number mod k equal to j
+    dp = [[0] * 2 for _ in range(2)]
+
+    # Extend the pattern xyxyxy...xy.
+    for x in nums:
+      for y in range(2):
+        dp[x % 2][y] = dp[y][x % 2] + 1
+
+    return max(map(max, dp))
