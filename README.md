@@ -193,3 +193,4 @@ leetcode/
 | 155 | 3136 | [Valid Word](https://leetcode.com/problems/valid-word/) | Easy | [Python](/python/3136.py) |
 | 156 | 3201 | [Count the Number of Beautiful Subarrays](https://leetcode.com/problems/count-the-number-of-beautiful-subarrays/) | Medium | [Python](/python/3201.py) |
 | 157 | 3202 | [Count the Number of Special Subarrays](https://leetcode.com/problems/count-the-number-of-special-subarrays/) | Medium | [Python](/python/3202.py) |
+| 158 | 2163 | [Minimum Difference in Sums After Removal of Elements](https://leetcode.com/problems/minimum-difference-in-sums-after-removal-of-elements/) | Hard | [TypeScript](/python/2163.py) |
