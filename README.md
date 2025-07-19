@@ -194,3 +194,4 @@ leetcode/
 | 156 | 3201 | [Count the Number of Beautiful Subarrays](https://leetcode.com/problems/count-the-number-of-beautiful-subarrays/) | Medium | [Python](/python/3201.py) |
 | 157 | 3202 | [Count the Number of Special Subarrays](https://leetcode.com/problems/count-the-number-of-special-subarrays/) | Medium | [Python](/python/3202.py) |
 | 158 | 2163 | [Minimum Difference in Sums After Removal of Elements](https://leetcode.com/problems/minimum-difference-in-sums-after-removal-of-elements/) | Hard | [TypeScript](/python/2163.py) |
+| 159 | 1233 | [Remove Sub-Folders from the Filesystem](https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/) | Medium | [Python](/python/1233.py) |
