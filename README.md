@@ -198,3 +198,4 @@ leetcode/
 | 160 | 1948 | [Delete Duplicate Folders in System](https://leetcode.com/problems/delete-duplicate-folders-in-system/) | Hard | [Python](/python/1948.py) |
 | 161 | 1957 | [Delete Characters to Make Fancy String](https://leetcode.com/problems/delete-characters-to-make-fancy-string/) | Easy | [Python](/python/1957.py) |
 | 162 | 1695 | [Maximum Erasure Value](https://leetcode.com/problems/maximum-erasure-value/) | Medium | [Python](/python/1695.py) |
+| 163 | 1717 | [Maximum Score From Removing Substrings](https://leetcode.com/problems/maximum-score-from-removing-substrings/) | Medium | [Python](/python/1717.py) |
