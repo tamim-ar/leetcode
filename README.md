@@ -199,3 +199,4 @@ leetcode/
 | 161 | 1957 | [Delete Characters to Make Fancy String](https://leetcode.com/problems/delete-characters-to-make-fancy-string/) | Easy | [Python](/python/1957.py) |
 | 162 | 1695 | [Maximum Erasure Value](https://leetcode.com/problems/maximum-erasure-value/) | Medium | [Python](/python/1695.py) |
 | 163 | 1717 | [Maximum Score From Removing Substrings](https://leetcode.com/problems/maximum-score-from-removing-substrings/) | Medium | [Python](/python/1717.py) |
+| 164 | 2322 | [Minimum Score After Removals on a Tree](https://leetcode.com/problems/minimum-score-after-removals-on-a-tree/) | Hard | [Python](/python/2322.py) |
