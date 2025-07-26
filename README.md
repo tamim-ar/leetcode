@@ -43,7 +43,7 @@ leetcode/
 | 5 | 9 | [Palindrome Number](https://leetcode.com/problems/palindrome-number/) | Easy | [Python](/python/9.py) |
 | 6 | 26 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy | [Python](/python/26.py) |
 | 7 | 27 | [Remove Element](https://leetcode.com/problems/remove-element/) | Easy | [Java](/java/27.java) |
-| 8 | 45 | [Jump Game II](https://leetcode.com/problems/jump-game-ii/) | Medium | [C++](/cpp/45.cpp) |
+| 8 | 45 | [Jump Game II](https://leetcode.com/problems/jump-game-ii/) | Medium | [Python](/python/45.py) |
 | 9 | 55 | [Jump Game](https://leetcode.com/problems/jump-game/) | Medium | [Python](/python/55.py) |
 | 10 | 80 | [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) | Medium | [Python](/python/80.py) |
 | 11 | 88 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | Easy | [Java](/java/88.java) |
