@@ -193,7 +193,7 @@ leetcode/
 | 155 | 3136 | [Valid Word](https://leetcode.com/problems/valid-word/) | Easy | [Python](/python/3136.py) |
 | 156 | 3201 | [Count the Number of Beautiful Subarrays](https://leetcode.com/problems/count-the-number-of-beautiful-subarrays/) | Medium | [Python](/python/3201.py) |
 | 157 | 3202 | [Count the Number of Special Subarrays](https://leetcode.com/problems/count-the-number-of-special-subarrays/) | Medium | [Python](/python/3202.py) |
-| 158 | 2163 | [Minimum Difference in Sums After Removal of Elements](https://leetcode.com/problems/minimum-difference-in-sums-after-removal-of-elements/) | Hard | [TypeScript](/python/2163.py) |
+| 158 | 2163 | [Minimum Difference in Sums After Removal of Elements](https://leetcode.com/problems/minimum-difference-in-sums-after-removal-of-elements/) | Hard | [Python](/python/2163.py) |
 | 159 | 1233 | [Remove Sub-Folders from the Filesystem](https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/) | Medium | [Python](/python/1233.py) |
 | 160 | 1948 | [Delete Duplicate Folders in System](https://leetcode.com/problems/delete-duplicate-folders-in-system/) | Hard | [Python](/python/1948.py) |
 | 161 | 1957 | [Delete Characters to Make Fancy String](https://leetcode.com/problems/delete-characters-to-make-fancy-string/) | Easy | [Python](/python/1957.py) |
