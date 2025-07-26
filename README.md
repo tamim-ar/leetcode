@@ -113,7 +113,7 @@ leetcode/
 | 75 | 2886 | [Change Data Type](https://leetcode.com/problems/change-data-type/) | Easy | [Python](/python/2886.py) |
 | 76 | 2887 | [Fill Missing Data](https://leetcode.com/problems/fill-missing-data/) | Easy | [Python](/python/2887.py) |
 | 77 | 2888 | [Reshape Data: Concatenate](https://leetcode.com/problems/reshape-data-concatenate/) | Easy | [Python](/python/2888.py) |
-| 78 | 2889 | [Reshape Data: Pivot](https://leetcode.com/problems/reshape-data-pivot/) | Easy | [Python](/python/2890.py) |
+| 78 | 2889 | [Reshape Data: Pivot](https://leetcode.com/problems/reshape-data-pivot/) | Easy | [Python](/python/2889.py) |
 | 79 | 2890 | [Reshape Data: Melt](https://leetcode.com/problems/reshape-data-melt/) | Easy | [Python](/python/2890.py) |
 | 80 | 2891 | [Method Chaining](https://leetcode.com/problems/method-chaining/) | Easy | [Python](/python/2891.py) |
 | 81 | 2703 | [Return Length of Arguments Passed](https://leetcode.com/problems/return-length-of-arguments-passed/) | Easy | [JavaScript](/javascript/2703.js) |
