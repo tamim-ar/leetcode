@@ -6,7 +6,6 @@ class Solution:
       return sum(fruits[i][i] for i in range(n))
 
     def getTopRight() -> int:
-      # dp[i][j] := the number of fruits collected from (0, n - 1) to (i, j)
       dp = [[0] * n for _ in range(n)]
       dp[0][-1] = fruits[0][-1]
       for x in range(n):
@@ -24,7 +23,6 @@ class Solution:
       return dp[-1][-1]
 
     def getBottomLeft() -> int:
-      # dp[i][j] := the number of fruits collected from (n - 1, 0) to (i, j)
       dp = [[0] * n for _ in range(n)]
       dp[-1][0] = fruits[-1][0]
       for y in range(n):
