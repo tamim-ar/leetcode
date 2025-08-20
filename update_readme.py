@@ -4,7 +4,7 @@ import os
 import re
 
 # ===== CONFIG =====
-TOTAL_PROBLEMS = 3647   # Fixed total problems count
+TOTAL_PROBLEMS = 3656   # Fixed total problems count
 SOLUTIONS_FOLDER = "solutions"  # Folder with all solution files/folders
 
 BADGE_STYLE = "flat-square"
