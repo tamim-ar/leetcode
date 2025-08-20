@@ -17,6 +17,11 @@
   <br/>
   ![TypeScript](https://img.shields.io/badge/TypeScript-31%20solutions-93C5FD?style=flat-square&logo=typescript)
   ![MySQL](https://img.shields.io/badge/MySQL-18%20solutions-BAE6FD?style=flat-square&logo=mysql)
+  <br/>
+  ![JavaScript](https://img.shields.io/badge/JavaScript-1%20solutions-F7DF1E?style=flat-square&logo=javascript)
+  ![C](https://img.shields.io/badge/C-0%20solutions-A8B9CC?style=flat-square&logo=c)
+  ![C#](https://img.shields.io/badge/C%23-0%20solutions-239120?style=flat-square&logo=csharp)
+  ![PHP](https://img.shields.io/badge/PHP-0%20solutions-777BB4?style=flat-square&logo=php)
   
   ---
 </div>

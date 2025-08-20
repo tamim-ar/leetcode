@@ -14,7 +14,11 @@ LOGO_COLOR = {
     "Java": "4298E2",
     "Python": "60A4FB",
     "TypeScript": "93C5FD",
-    "MySQL": "BAE6FD"
+    "MySQL": "BAE6FD",
+    "JavaScript": "F7DF1E",
+    "C": "A8B9CC",
+    "C#": "239120",
+    "PHP": "777BB4"
 }
 
 LANGUAGE_EXTENSIONS = {
@@ -22,7 +26,11 @@ LANGUAGE_EXTENSIONS = {
     "Java": [".java"],
     "Python": [".py"],
     "TypeScript": [".ts"],
-    "MySQL": [".sql"]
+    "MySQL": [".sql"],
+    "JavaScript": [".js"],
+    "C": [".c"],
+    "C#": [".cs"],
+    "PHP": [".php"]
 }
 # ==================
 
@@ -41,14 +49,19 @@ def count_solutions_by_language():
 
 def generate_badges(solved, total, counts):
     percentage = round((solved / total) * 100, 2) if total > 0 else 0
-    return {
+    badges = {
         "progress": f"https://img.shields.io/badge/Solved-{solved}%2F{total}%20({percentage}%25)-{LOGO_COLOR['LeetCode']}?style={BADGE_STYLE}&logo=leetcode",
         "C++": f"https://img.shields.io/badge/C%2B%2B23-{counts['C++']}%20solutions-{LOGO_COLOR['C++']}?style={BADGE_STYLE}&logo=cplusplus",
         "Java": f"https://img.shields.io/badge/Java-{counts['Java']}%20solutions-{LOGO_COLOR['Java']}?style={BADGE_STYLE}&logo=java",
         "Python": f"https://img.shields.io/badge/Python%203-{counts['Python']}%20solutions-{LOGO_COLOR['Python']}?style={BADGE_STYLE}&logo=python",
         "TypeScript": f"https://img.shields.io/badge/TypeScript-{counts['TypeScript']}%20solutions-{LOGO_COLOR['TypeScript']}?style={BADGE_STYLE}&logo=typescript",
-        "MySQL": f"https://img.shields.io/badge/MySQL-{counts['MySQL']}%20solutions-{LOGO_COLOR['MySQL']}?style={BADGE_STYLE}&logo=mysql"
+        "MySQL": f"https://img.shields.io/badge/MySQL-{counts['MySQL']}%20solutions-{LOGO_COLOR['MySQL']}?style={BADGE_STYLE}&logo=mysql",
+        "JavaScript": f"https://img.shields.io/badge/JavaScript-{counts['JavaScript']}%20solutions-{LOGO_COLOR['JavaScript']}?style={BADGE_STYLE}&logo=javascript",
+        "C": f"https://img.shields.io/badge/C-{counts['C']}%20solutions-{LOGO_COLOR['C']}?style={BADGE_STYLE}&logo=c",
+        "C#": f"https://img.shields.io/badge/C%23-{counts['C#']}%20solutions-{LOGO_COLOR['C#']}?style={BADGE_STYLE}&logo=csharp",
+        "PHP": f"https://img.shields.io/badge/PHP-{counts['PHP']}%20solutions-{LOGO_COLOR['PHP']}?style={BADGE_STYLE}&logo=php"
     }
+    return badges
 
 def update_readme(badges):
     with open("README.md", "r", encoding="utf-8") as f:
@@ -60,7 +73,11 @@ def update_readme(badges):
         r"https://img\.shields\.io/badge/Java-[^\s)]+": badges["Java"],
         r"https://img\.shields\.io/badge/Python%203-[^\s)]+": badges["Python"],
         r"https://img\.shields\.io/badge/TypeScript-[^\s)]+": badges["TypeScript"],
-        r"https://img\.shields\.io/badge/MySQL-[^\s)]+": badges["MySQL"]
+        r"https://img\.shields\.io/badge/MySQL-[^\s)]+": badges["MySQL"],
+        r"https://img\.shields\.io/badge/JavaScript-[^\s)]+": badges["JavaScript"],
+        r"https://img\.shields\.io/badge/C-[^\s)]+": badges["C"],
+        r"https://img\.shields\.io/badge/C%23-[^\s)]+": badges["C#"],
+        r"https://img\.shields\.io/badge/PHP-[^\s)]+": badges["PHP"]
     }
     for pattern, new_url in replacements.items():
         content = re.sub(pattern, new_url, content)
