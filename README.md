@@ -9,14 +9,14 @@
   
   ---
 
-  ![LeetCode Progress](https://img.shields.io/badge/Solved-200%2F3657%20(5.47%25)-323232?style=flat-square&logo=leetcode)-323232?style=flat-square&logo=leetcode)
+  ![LeetCode Progress](https://img.shields.io/badge/Solved-203%2F3657%20(5.55%25)-323232?style=flat-square&logo=leetcode)-323232?style=flat-square&logo=leetcode)-323232?style=flat-square&logo=leetcode)
   <br/>
   ![C++](https://img.shields.io/badge/C%2B%2B23-110%20solutions-7DD3FC?style=flat-square&logo=cplusplus)
   ![Java](https://img.shields.io/badge/Java-108%20solutions-4298E2?style=flat-square&logo=java)
   ![Python](https://img.shields.io/badge/Python%203-159%20solutions-60A4FB?style=flat-square&logo=python)
   <br/>
   ![TypeScript](https://img.shields.io/badge/TypeScript-31%20solutions-93C5FD?style=flat-square&logo=typescript)
-  ![MySQL](https://img.shields.io/badge/MySQL-18%20solutions-BAE6FD?style=flat-square&logo=mysql)
+  ![MySQL](https://img.shields.io/badge/MySQL-21%20solutions-BAE6FD?style=flat-square&logo=mysql)
   <br/>
   ![JavaScript](https://img.shields.io/badge/JavaScript-1%20solutions-F7DF1E?style=flat-square&logo=javascript)
   ![C](https://img.shields.io/badge/C-0%20solutions-A8B9CC?style=flat-square&logo=c)
