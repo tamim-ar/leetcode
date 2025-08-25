@@ -1,11 +1,8 @@
-# update_readme.py
-
 import os
 import re
 
-# ===== CONFIG =====
-TOTAL_PROBLEMS = 3657   # Fixed total problems count
-SOLUTIONS_FOLDER = "solutions"  # Folder with all solution files/folders
+TOTAL_PROBLEMS = 3662   
+SOLUTIONS_FOLDER = "solutions"  
 
 BADGE_STYLE = "flat-square"
 LOGO_COLOR = {
@@ -32,7 +29,6 @@ LANGUAGE_EXTENSIONS = {
     "C#": [".cs"],
     "PHP": [".php"]
 }
-# ==================
 
 def count_subfolders(folder):
     with os.scandir(folder) as entries:
@@ -82,7 +78,6 @@ def update_readme(badges):
     for pattern, new_url in replacements.items():
         content = re.sub(pattern, new_url, content)
 
-    # Fix possible duplicated LeetCode badge suffixes like '-323232?style=flat-square&logo=leetcode)'
     content = re.sub(
         r"(https://img\.shields\.io/badge/Solved-[^\s)]+)-323232\?style=flat-square&logo=leetcode\)",
         r"\1)",
@@ -93,7 +88,7 @@ def update_readme(badges):
         f.write(content)
 
 if __name__ == "__main__":
-    solved = count_subfolders(SOLUTIONS_FOLDER)  # count folders inside solutions/
+    solved = count_subfolders(SOLUTIONS_FOLDER)  
     counts = count_solutions_by_language()
     badges = generate_badges(solved, TOTAL_PROBLEMS, counts)
     update_readme(badges)
