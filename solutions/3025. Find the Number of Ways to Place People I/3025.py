@@ -4,10 +4,10 @@ class Solution:
         ans = 0
         for i in range(n):
             for j in range(n):
-                if points[i][0] < points[j][0] and points[i][1] > points[j][1]:
+                if points[i][0] <= points[j][0] and points[i][1] >= points[j][1] and points[i] != points[j]:
                     valid = True
                     for k in range(n):
-                        if i != k and j != k:
+                        if k != i and k != j:
                             if points[i][0] <= points[k][0] <= points[j][0] and points[j][1] <= points[k][1] <= points[i][1]:
                                 valid = False
                                 break
