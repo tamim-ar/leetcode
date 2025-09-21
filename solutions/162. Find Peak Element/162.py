@@ -1,14 +1,10 @@
 class Solution:
-    def slowestKey(self, releaseTimes: list[int], keysPressed: str) -> str:
-        ans = keysPressed[0]
-        maxDuration = releaseTimes[0]
-
-        for i in range(1, len(keysPressed)):
-            duration = releaseTimes[i] - releaseTimes[i - 1]
-            if duration > maxDuration or (
-                duration == maxDuration and keysPressed[i] > ans
-            ):
-                ans = keysPressed[i]
-                maxDuration = duration
-
-        return ans
+    def findPeakElement(self, nums: list[int]) -> int:
+        left, right = 0, len(nums) - 1
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] > nums[mid + 1]:
+                right = mid
+            else:
+                left = mid + 1
+        return left
