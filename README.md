@@ -1,5 +1,5 @@
 ﻿<div align="center">
-  <a href="https://walkccc.me/LeetCode/">
+  <a href="#">
     <img src="https://i.imgur.com/IsS5xkZ.png" width="70" height="70" alt="LeetCode Logo" loading="lazy">
   </a>
   
