@@ -9,7 +9,7 @@
   
   ---
 
-  ![LeetCode Progress](https://img.shields.io/badge/Solved-334%2F3706%20(9.01%25)-323232?style=flat-square&logo=leetcode)-323232?style=flat-square&logo=leetcode)
+  ![LeetCode Progress](https://img.shields.io/badge/Solved-334%2F3706%20(9.01%25)-323232?style=flat-square&logo=leetcode)
   ![C++](https://img.shields.io/badge/C%2B%2B23-110%20solutions-7DD3FC?style=flat-square&logo=cplusplus)
   ![Java](https://img.shields.io/badge/Java-108%20solutions-4298E2?style=flat-square&logo=java)
   ![Python](https://img.shields.io/badge/Python%203-290%20solutions-60A4FB?style=flat-square&logo=python)
@@ -57,4 +57,5 @@ To add or improve solutions:
 5. Open a **Pull Request** 🎯
 
 ## 📜 License
+
 Licensed under the [MIT License](./LICENSE).
