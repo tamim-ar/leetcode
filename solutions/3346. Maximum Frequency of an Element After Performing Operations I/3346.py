@@ -1,10 +1,24 @@
+from sortedcontainers import SortedDict
+
+
 class Solution:
-    def maxFrequency(self, nums: List[int], k: int, numOperations: int) -> int:
-        nums.sort()
-        l = 0
-        res = 1
-        for r in range(len(nums)):
-            while nums[r] - nums[l] > 2 * k:
-                l += 1
-            res = max(res, min(r - l + 1, numOperations + 1))
-        return res
+  def maxFrequency(self, nums: list[int], k: int, numOperations: int) -> int:
+    ans = 1
+    adjustable = 0
+    count = collections.Counter(nums)
+    line = SortedDict()
+    candidates = set()
+
+    for num in nums:
+      line[num - k] = line.get(num - k, 0) + 1
+      line[num + k + 1] = line.get(num + k + 1, 0) - 1
+      candidates.add(num)
+      candidates.add(num - k)
+      candidates.add(num + k + 1)
+
+    for num in sorted(candidates):
+      adjustable += line.get(num, 0)
+      adjusted = adjustable - count[num]
+      ans = max(ans, count[num] + min(numOperations, adjusted))
+
+    return ans
