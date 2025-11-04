@@ -9,10 +9,10 @@
   
   ---
 
-  ![LeetCode Progress](https://img.shields.io/badge/Solved-362%2F3730%20(9.71%25)-323232?style=flat-square&logo=leetcode)
+  ![LeetCode Progress](https://img.shields.io/badge/Solved-363%2F3735%20(9.72%25)-323232?style=flat-square&logo=leetcode)
   ![C++](https://img.shields.io/badge/C%2B%2B23-110%20solutions-7DD3FC?style=flat-square&logo=cplusplus)
   ![Java](https://img.shields.io/badge/Java-108%20solutions-4298E2?style=flat-square&logo=java)
-  ![Python](https://img.shields.io/badge/Python%203-318%20solutions-60A4FB?style=flat-square&logo=python)
+  ![Python](https://img.shields.io/badge/Python%203-319%20solutions-60A4FB?style=flat-square&logo=python)
   <br/>
   ![TypeScript](https://img.shields.io/badge/TypeScript-31%20solutions-93C5FD?style=flat-square&logo=typescript)
   ![MySQL](https://img.shields.io/badge/MySQL-21%20solutions-BAE6FD?style=flat-square&logo=mysql)
