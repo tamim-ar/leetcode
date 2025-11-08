@@ -2,36 +2,38 @@ import os
 import re
 
 TOTAL_PROBLEMS = 3735
-SOLUTIONS_FOLDER = "solutions"  
+SOLUTIONS_FOLDER = "solutions"
 
 BADGE_STYLE = "flat-square"
 LOGO_COLOR = {
     "LeetCode": "323232",
-    "C++": "7DD3FC",
-    "Java": "4298E2",
     "Python": "60A4FB",
-    "TypeScript": "93C5FD",
-    "MySQL": "BAE6FD",
+    "Java": "4298E2",
     "JavaScript": "F7DF1E",
-    "C": "A8B9CC",
-    "C#": "239120",
-    "PHP": "777BB4"
+    "TypeScript": "3178C6",
+    "C": "555555",
+    "C++": "00599C",
+    "C#": "9B4F96",
+    "PHP": "777BB4",
+    "MySQL": "BAE6FD"
 }
 
 LANGUAGE_EXTENSIONS = {
-    "C++": [".cpp", ".cc", ".cxx", ".h", ".hpp"],
-    "Java": [".java"],
     "Python": [".py"],
-    "TypeScript": [".ts"],
-    "MySQL": [".sql"],
+    "Java": [".java"],
     "JavaScript": [".js"],
-    "C": [".c"],
+    "TypeScript": [".ts"],
+    "C": [".c", ".h"],
+    "C++": [".cpp", ".hpp", ".cc", ".cxx"],
     "C#": [".cs"],
-    "PHP": [".php"]
+    "PHP": [".php"],
+    "MySQL": [".sql"]
 }
 
-def count_subfolders(folder):
-    with os.scandir(folder) as entries:
+def count_solutions():
+    if not os.path.exists(SOLUTIONS_FOLDER):
+        return 0
+    with os.scandir(SOLUTIONS_FOLDER) as entries:
         return sum(1 for entry in entries if entry.is_dir())
 
 def count_solutions_by_language():
@@ -45,8 +47,8 @@ def count_solutions_by_language():
 
 def generate_badges(solved, total, counts):
     percentage = round((solved / total) * 100, 2) if total > 0 else 0
-    badges = {
-        "progress": f"https://img.shields.io/badge/Solved-{solved}%2F{total}%20({percentage}%25)-{LOGO_COLOR['LeetCode']}?style={BADGE_STYLE}&logo=leetcode",
+    return {
+        "progress": f"https://img.shields.io/badge/Solved-{solved}%2F{total}%20({percentage}%25)-323232?style={BADGE_STYLE}&logo=leetcode",
         "C++": f"https://img.shields.io/badge/C%2B%2B23-{counts['C++']}%20solutions-{LOGO_COLOR['C++']}?style={BADGE_STYLE}&logo=cplusplus",
         "Java": f"https://img.shields.io/badge/Java-{counts['Java']}%20solutions-{LOGO_COLOR['Java']}?style={BADGE_STYLE}&logo=java",
         "Python": f"https://img.shields.io/badge/Python%203-{counts['Python']}%20solutions-{LOGO_COLOR['Python']}?style={BADGE_STYLE}&logo=python",
@@ -57,38 +59,62 @@ def generate_badges(solved, total, counts):
         "C#": f"https://img.shields.io/badge/C%23-{counts['C#']}%20solutions-{LOGO_COLOR['C#']}?style={BADGE_STYLE}&logo=csharp",
         "PHP": f"https://img.shields.io/badge/PHP-{counts['PHP']}%20solutions-{LOGO_COLOR['PHP']}?style={BADGE_STYLE}&logo=php"
     }
-    return badges
 
 def update_readme(badges):
-    with open("README.md", "r", encoding="utf-8") as f:
-        content = f.read()
+    readme_template = '''<div align="center">
+  <h1>🏆 LeetCode Solutions</h1>
+  
+  Solutions to [LeetCode](https://leetcode.com/problemset/all/) problems
+  
+  ---
+  
+  ![LeetCode Progress]({progress})
+  <br/>
+  ![Python]({Python})
+  ![Java]({Java})
+  ![TypeScript]({TypeScript})
+  ![JavaScript]({JavaScript})
+  <br/>
+  ![C++]({C++})
+  ![C]({C})
+  ![C#]({C#})
+  ![PHP]({PHP})
+  ![MySQL]({MySQL})
+  
+  ---
+</div>
 
-    replacements = {
-        r"https://img\.shields\.io/badge/Solved-[^\s)]+": badges["progress"],
-        r"https://img\.shields\.io/badge/C%2B%2B23-[^\s)]+": badges["C++"],
-        r"https://img\.shields\.io/badge/Java-[^\s)]+": badges["Java"],
-        r"https://img\.shields\.io/badge/Python%203-[^\s)]+": badges["Python"],
-        r"https://img\.shields\.io/badge/TypeScript-[^\s)]+": badges["TypeScript"],
-        r"https://img\.shields\.io/badge/MySQL-[^\s)]+": badges["MySQL"],
-        r"https://img\.shields\.io/badge/JavaScript-[^\s)]+": badges["JavaScript"],
-        r"https://img\.shields\.io/badge/C-[^\s)]+": badges["C"],
-        r"https://img\.shields\.io/badge/C%23-[^\s)]+": badges["C#"],
-        r"https://img\.shields\.io/badge/PHP-[^\s)]+": badges["PHP"]
-    }
-    for pattern, new_url in replacements.items():
-        content = re.sub(pattern, new_url, content)
+## ✨ Features
+- ✅ Clean & optimized solutions
+- ✅ Multiple programming language solutions
+- ✅ Perfect for learning algorithms and data structures
 
-    content = re.sub(
-        r"(https://img\.shields\.io/badge/Solved-[^\s)]+)-323232\?style=flat-square&logo=leetcode\)",
-        r"\1)",
-        content
-    )
+## 👨‍💻 Author
+**Tamim Ahasan Rijon**  
+📧 [tamimahasan.ar@gmail.com](mailto:tamimahasan.ar@gmail.com)  
+🌐 [Portfolio](https://tamim-ar.netlify.app/)  
+🔗 [LinkedIn](https://www.linkedin.com/in/tamim-ar/) • [GitHub](https://github.com/tamim-ar) • [X/Twitter](https://x.com/tamim__ahasan)  
+📷 [Instagram](https://www.instagram.com/tamim__ahasan/) • [Facebook](https://www.facebook.com/hellotamim/)
 
+## 🤝 Contributing
+Contributions are welcome! 🚀  
+To add or improve solutions:
+1. **Fork** this repository  
+2. Create a feature branch → `git checkout -b feature/your-solution`  
+3. Commit changes → `git commit -m 'Add solution'`  
+4. Push to your branch → `git push origin feature/your-solution`  
+5. Open a **Pull Request** 🎯
+
+## 📜 License
+Licensed under the [MIT License](./LICENSE).
+'''
+    content = readme_template.format(**badges)
+    
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(content)
 
 if __name__ == "__main__":
-    solved = count_subfolders(SOLUTIONS_FOLDER)  
+    solved = count_solutions()
     counts = count_solutions_by_language()
     badges = generate_badges(solved, TOTAL_PROBLEMS, counts)
     update_readme(badges)
