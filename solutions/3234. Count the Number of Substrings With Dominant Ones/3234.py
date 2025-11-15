@@ -1,33 +1,44 @@
 class Solution:
-  def numberOfSubstrings(self, s: str) -> int:
-    ans = 0
-    #    z^2 + z = n.
-    # => z^2 + z - n = 0.
-    # => z = (-1 + sqrt(1 + 4n)) / 2.
-    maxZero = (-1 + math.sqrt(1 + 4 * len(s))) // 2
+    def numberOfSubstrings(self, s: str) -> int:
+        lens = len(s)
+        res = 0
+        # substring with only 1s:
+        i = 0
+        first1 = -1
+        while i < lens:
+            if s[i] == '1':
+                if first1 == -1:
+                    first1 = i
+                res += i - first1 + 1
+            else:
+                first1 = -1
+            i += 1
 
-    # Iterate through all possible number of 0s.
-    for zero in range(int(maxZero) + 1):
-      lastInvalidPos = -1
-      count = [0, 0]
-      l = 0
-      for r, c in enumerate(s):
-        count[int(c)] += 1
-        # Try to shrink the window to maintain the "minimum" length of the
-        # valid substring.
-        while l < r:
-          if s[l] == '0' and count[0] > zero:
-            count[0] -= 1  # Remove an extra '0'.
-            lastInvalidPos = l
-            l += 1
-          elif s[l] == '1' and count[1] - 1 >= zero * zero:
-            count[1] -= 1  # Remove an extra '1'.
-            l += 1
-          else:
-            break  # Cannot remove more characters.
-        if count[0] == zero and count[1] >= zero * zero:
-          # Add valid substrings ending in s[r] to the answer. They are
-          # s[lastInvalidPos + 1..r], s[lastInvalidPos + 2..r], ..., s[l..r].
-          ans += l - lastInvalidPos
+        # substring with at least one 0s:
+        # iterate through all possible 0 numbers
+        for zeroNum in range(1, int(sqrt(lens)) + 1):
 
-    return ans
+            zeroPos = deque([]) # record 0 positions
+            curZeroNum = 0
+            firstZeroI = -1
+            oneNum = 0          # record 1 numbers
+            # two pointers 
+            for r in range(lens):
+                if s[r] == '0':
+                    zeroPos.append(r)
+                    curZeroNum += 1
+                    if curZeroNum > zeroNum:
+                        curZeroNum -= 1
+                        oneNum -= zeroPos[0] - firstZeroI - 1
+                        firstZeroI = zeroPos.popleft()
+                else:
+                    oneNum += 1
+
+                # Add the minimum of:
+                    # 1. Number of ways to extend to the left (zeros[0] - lastzero)
+                    # 2. Number of ways to extend to the right (ones - k**2 + 1)
+                if curZeroNum == zeroNum and oneNum >= zeroNum ** 2:
+                    res += min(zeroPos[0] - firstZeroI, oneNum - zeroNum**2 + 1)
+        return res
+
+            
