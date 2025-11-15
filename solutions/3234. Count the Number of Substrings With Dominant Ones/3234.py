@@ -1,31 +1,33 @@
 class Solution:
-    def numberOfSubstrings(self, s: str) -> int:
-        n = len(s)
-        zeros = [0] * (n + 1)
-        ones = [0] * (n + 1)
+  def numberOfSubstrings(self, s: str) -> int:
+    ans = 0
+    #    z^2 + z = n.
+    # => z^2 + z - n = 0.
+    # => z = (-1 + sqrt(1 + 4n)) / 2.
+    maxZero = (-1 + math.sqrt(1 + 4 * len(s))) // 2
 
-        for i, c in enumerate(s):
-            zeros[i+1] = zeros[i] + (c == '0')
-            ones[i+1] = ones[i] + (c == '1')
+    # Iterate through all possible number of 0s.
+    for zero in range(int(maxZero) + 1):
+      lastInvalidPos = -1
+      count = [0, 0]
+      l = 0
+      for r, c in enumerate(s):
+        count[int(c)] += 1
+        # Try to shrink the window to maintain the "minimum" length of the
+        # valid substring.
+        while l < r:
+          if s[l] == '0' and count[0] > zero:
+            count[0] -= 1  # Remove an extra '0'.
+            lastInvalidPos = l
+            l += 1
+          elif s[l] == '1' and count[1] - 1 >= zero * zero:
+            count[1] -= 1  # Remove an extra '1'.
+            l += 1
+          else:
+            break  # Cannot remove more characters.
+        if count[0] == zero and count[1] >= zero * zero:
+          # Add valid substrings ending in s[r] to the answer. They are
+          # s[lastInvalidPos + 1..r], s[lastInvalidPos + 2..r], ..., s[l..r].
+          ans += l - lastInvalidPos
 
-        ans = 0
-        max_z = int((n)**0.5) + 5
-
-        for i in range(n):
-            for z in range(max_z + 1):
-                l = i
-                r = n - 1
-                target = ones[i] + z*z
-                lo, hi = i, n
-                while lo < hi:
-                    mid = (lo + hi) // 2
-                    if ones[mid+1] - ones[i] >= z*z:
-                        hi = mid
-                    else:
-                        lo = mid + 1
-                j = lo
-                if j == n: 
-                    continue
-                if zeros[j+1] - zeros[i] == z:
-                    ans += 1
-        return ans
+    return ans
