@@ -1,37 +1,48 @@
+from typing import List
+import collections
+from functools import cache
+
 class Solution:
-    def maximumProfit(self, present: List[int], future: List[int], budget: int) -> int:
-        """
-        Dynamic programming solution for maximizing profit from stock investments.
+    def maxProfit(self, N: int, present: List[int], future: List[int],
+                  hierarchy: List[List[int]], budget: int) -> int:
 
-        Args:
-            present: List of current prices for each stock
-            future: List of future prices for each stock
-            budget: Total available budget for investments
+        adj = collections.defaultdict(list)
+        for u, v in hierarchy:
+            adj[u].append(v)
 
-        Returns:
-            Maximum profit achievable within the budget
-        """
-        n = len(present)
+        @cache
+        def c(node, idx, prev):
+            if idx == len(adj[node]):
+                return [0] * (budget + 1)
 
-        # Initialize DP table: dp[i][j] represents max profit using first i stocks with budget j
-        dp = [[0] * (budget + 1) for _ in range(n + 1)]
+            b1 = c(node, idx + 1, prev)
+            b2 = f(adj[node][idx], prev)
 
-        # Fill the DP table
-        for i in range(1, n + 1):
-            current_price = present[i - 1]
-            future_price = future[i - 1]
+            res = [0] * (budget + 1)
+            for i in range(budget + 1):
+                if b1[i] < 0:
+                    continue
+                for j in range(budget - i + 1):
+                    if b2[j] < 0:
+                        continue
+                    res[i + j] = max(res[i + j], b1[i] + b2[j])
+            return res
 
-            for current_budget in range(budget + 1):
-                # Option 1: Don't buy the current stock
-                dp[i][current_budget] = dp[i - 1][current_budget]
+        @cache
+        def f(node, prev):
+            dp = c(node, 0, False)
 
-                # Option 2: Buy the current stock if profitable and within budget
-                if current_budget >= current_price and future_price > current_price:
-                    profit_from_current = future_price - current_price
-                    dp[i][current_budget] = max(
-                        dp[i][current_budget],
-                        dp[i - 1][current_budget - current_price] + profit_from_current
-                    )
+            cost = present[node - 1] // 2 if prev else present[node - 1]
+            gain = future[node - 1] - cost
 
-        # Return the maximum profit achievable with full budget
-        return dp[n][budget]
+            take = c(node, 0, True)
+            for i in range(budget + 1):
+                if i + cost <= budget:
+                    dp[i + cost] = max(dp[i + cost], take[i] + gain)
+
+            for i in range(1, budget + 1):
+                dp[i] = max(dp[i], dp[i - 1])
+            return dp
+
+        res = f(1, False)
+        return res[budget]
