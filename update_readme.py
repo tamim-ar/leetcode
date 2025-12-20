@@ -125,6 +125,3 @@ if __name__ == "__main__":
     for lang, count in counts.items():
         print(f"   • {lang:<10}: {count} solutions")
     print("\n✅ Done!\n")
-
-
-    14
