@@ -4,7 +4,11 @@ class Solution:
         for a, b, c in allowed:
             mp.setdefault(a + b, []).append(c)
 
+        memo = {}
+
         def dfs(row: str) -> bool:
+            if row in memo:
+                return memo[row]
             if len(row) == 1:
                 return True
 
@@ -19,6 +23,7 @@ class Solution:
                         return True
                 return False
 
-            return build(0, "")
+            memo[row] = build(0, "")
+            return memo[row]
 
         return dfs(bottom)
