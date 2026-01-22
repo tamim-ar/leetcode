@@ -5,7 +5,7 @@
   
   ---
   
-  ![LeetCode Progress](https://img.shields.io/badge/Solved-500%2F3778%20(13.23%25)-323232?style=flat-square&logo=leetcode)
+  ![LeetCode Progress](https://img.shields.io/badge/Solved-500%2F3817%20(13.1%25)-323232?style=flat-square&logo=leetcode)
   <br/>
   ![Python](https://img.shields.io/badge/Python%203-454%20solutions-60A4FB?style=flat-square&logo=python)
   ![Java](https://img.shields.io/badge/Java-108%20solutions-4298E2?style=flat-square&logo=java)

@@ -1,5 +1,4 @@
 import os
-import re
 
 TOTAL_PROBLEMS = 3817
 SOLUTIONS_FOLDER = "solutions"
