@@ -10,27 +10,25 @@ class Solution:
             rg[v].append((u, w))
 
         INF = 10**18
-        dist = [[INF, INF] for _ in range(n)]
-        dist[0][0] = 0
+        dist = [INF] * n
+        dist[0] = 0
 
-        pq = [(0, 0, 0)]
+        pq = [(0, 0)]
 
         while pq:
-            d, u, used = heappop(pq)
-            if d > dist[u][used]:
+            d, u = heappop(pq)
+            if d > dist[u]:
                 continue
 
             for v, w in g[u]:
-                if d + w < dist[v][used]:
-                    dist[v][used] = d + w
-                    heappush(pq, (d + w, v, used))
+                if d + w < dist[v]:
+                    dist[v] = d + w
+                    heappush(pq, (dist[v], v))
 
-            if used == 0:
-                for v, w in rg[u]:
-                    nd = d + 2 * w
-                    if nd < dist[v][1]:
-                        dist[v][1] = nd
-                        heappush(pq, (nd, v, 1))
+            for v, w in rg[u]:
+                nd = d + 2 * w
+                if nd < dist[v]:
+                    dist[v] = nd
+                    heappush(pq, (nd, v))
 
-        ans = min(dist[n - 1])
-        return -1 if ans == INF else ans
+        return -1 if dist[n - 1] == INF else dist[n - 1]
