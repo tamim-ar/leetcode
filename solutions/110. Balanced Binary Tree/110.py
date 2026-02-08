@@ -12,3 +12,5 @@ class Solution:
             return max(l, r) + 1
 
         return dfs(root) != -1
+    
+    
