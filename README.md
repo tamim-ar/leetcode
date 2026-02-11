@@ -5,14 +5,14 @@
   
   ---
   
-  ![LeetCode Progress](https://img.shields.io/badge/Solved-519%2F3817%20(13.6%25)-323232?style=flat-square&logo=leetcode)
+  ![LeetCode Progress](https://img.shields.io/badge/Solved-522%2F3817%20(13.68%25)-323232?style=flat-square&logo=leetcode)
   <br/>
-  ![Python](https://img.shields.io/badge/Python%203-473%20solutions-60A4FB?style=flat-square&logo=python)
+  ![Python](https://img.shields.io/badge/Python%203-476%20solutions-60A4FB?style=flat-square&logo=python)
   ![Java](https://img.shields.io/badge/Java-108%20solutions-4298E2?style=flat-square&logo=java)
   ![TypeScript](https://img.shields.io/badge/TypeScript-31%20solutions-3178C6?style=flat-square&logo=typescript)
   ![JavaScript](https://img.shields.io/badge/JavaScript-1%20solutions-F7DF1E?style=flat-square&logo=javascript)
   <br/>
-  ![C++](https://img.shields.io/badge/C%2B%2B23-112%20solutions-00599C?style=flat-square&logo=cplusplus)
+  ![C++](https://img.shields.io/badge/C%2B%2B23-113%20solutions-00599C?style=flat-square&logo=cplusplus)
   ![C](https://img.shields.io/badge/C-0%20solutions-555555?style=flat-square&logo=c)
   ![C#](https://img.shields.io/badge/C%23-0%20solutions-9B4F96?style=flat-square&logo=csharp)
   ![PHP](https://img.shields.io/badge/PHP-0%20solutions-777BB4?style=flat-square&logo=php)
