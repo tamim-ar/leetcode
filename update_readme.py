@@ -1,6 +1,6 @@
 import os
 
-TOTAL_PROBLEMS = 3850
+TOTAL_PROBLEMS = 3851
 SOLUTIONS_FOLDER = "solutions"
 
 BADGE_STYLE = "flat-square"
