@@ -1,27 +1,24 @@
 class Solution:
     def numberOfStableArrays(self, zero: int, one: int, limit: int) -> int:
         MOD = 10**9 + 7
-        from functools import lru_cache
-
-        @lru_cache(None)
-        def dp(z, o, last, count):
-            if z == 0 and o == 0:
-                return 1
-            
-            ans = 0
-            
-            if z > 0:
-                if last != 0:
-                    ans = (ans + dp(z-1, o, 0, 1)) % MOD
-                elif count < limit:
-                    ans = (ans + dp(z-1, o, 0, count+1)) % MOD
-            
-            if o > 0:
-                if last != 1:
-                    ans = (ans + dp(z, o-1, 1, 1)) % MOD
-                elif count < limit:
-                    ans = (ans + dp(z, o-1, 1, count+1)) % MOD
-            
-            return ans % MOD
         
-        return (dp(zero, one, -1, 0)) % MOD
+        dp0 = [[0]*(one+1) for _ in range(zero+1)]
+        dp1 = [[0]*(one+1) for _ in range(zero+1)]
+        
+        for i in range(1, min(zero, limit)+1):
+            dp0[i][0] = 1
+        for j in range(1, min(one, limit)+1):
+            dp1[0][j] = 1
+        
+        for i in range(zero+1):
+            for j in range(one+1):
+                if i > 0:
+                    for k in range(1, min(limit, i)+1):
+                        if i-k >= 0:
+                            dp0[i][j] = (dp0[i][j] + dp1[i-k][j]) % MOD
+                if j > 0:
+                    for k in range(1, min(limit, j)+1):
+                        if j-k >= 0:
+                            dp1[i][j] = (dp1[i][j] + dp0[i][j-k]) % MOD
+        
+        return (dp0[zero][one] + dp1[zero][one]) % MOD
