@@ -1,16 +1,11 @@
-class Solution {
-    public int closetTarget(String[] words, String target, int startIndex) {
-        int n = words.length;
-        int ans = Integer.MAX_VALUE;
+class Solution:
+    def closestTarget(self, words: List[str], target: str, startIndex: int) -> int:
+        n = len(words)
+        min_distance = n
 
-        for (int i = 0; i < n; i++) {
-            if (words[i].equals(target)) {
-                int diff = Math.abs(i - startIndex);
-                int dist = Math.min(diff, n - diff);
-                ans = Math.min(ans, dist);
-            }
-        }
+        for i, word in enumerate(words):
+            if word == target:
+                d = abs(i - startIndex)
+                min_distance = min(min_distance, d, n - d)
 
-        return ans == Integer.MAX_VALUE ? -1 : ans;
-    }
-}
+        return -1 if min_distance == n else min_distance
