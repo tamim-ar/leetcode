@@ -14,7 +14,7 @@ LOGO_COLOR = {
     "C++": "00599C",
     "C#": "9B4F96",
     "PHP": "777BB4",
-    "MySQL": "BAE6FD"
+    "MySQL": "BAE6FD",
 }
 
 LANGUAGE_EXTENSIONS = {
@@ -26,14 +26,16 @@ LANGUAGE_EXTENSIONS = {
     "C++": [".cpp", ".hpp", ".cc", ".cxx"],
     "C#": [".cs"],
     "PHP": [".php"],
-    "MySQL": [".sql"]
+    "MySQL": [".sql"],
 }
+
 
 def count_solutions():
     if not os.path.exists(SOLUTIONS_FOLDER):
         return 0
     with os.scandir(SOLUTIONS_FOLDER) as entries:
         return sum(1 for entry in entries if entry.is_dir())
+
 
 def count_solutions_by_language():
     counts = {lang: 0 for lang in LANGUAGE_EXTENSIONS}
@@ -43,6 +45,7 @@ def count_solutions_by_language():
                 if any(file.endswith(ext) for ext in exts):
                     counts[lang] += 1
     return counts
+
 
 def generate_badges(solved, total, counts):
     percentage = round((solved / total) * 100, 2) if total > 0 else 0
@@ -56,11 +59,12 @@ def generate_badges(solved, total, counts):
         "JavaScript": f"https://img.shields.io/badge/JavaScript-{counts['JavaScript']}%20solutions-{LOGO_COLOR['JavaScript']}?style={BADGE_STYLE}&logo=javascript",
         "C": f"https://img.shields.io/badge/C-{counts['C']}%20solutions-{LOGO_COLOR['C']}?style={BADGE_STYLE}&logo=c",
         "C#": f"https://img.shields.io/badge/C%23-{counts['C#']}%20solutions-{LOGO_COLOR['C#']}?style={BADGE_STYLE}&logo=csharp",
-        "PHP": f"https://img.shields.io/badge/PHP-{counts['PHP']}%20solutions-{LOGO_COLOR['PHP']}?style={BADGE_STYLE}&logo=php"
+        "PHP": f"https://img.shields.io/badge/PHP-{counts['PHP']}%20solutions-{LOGO_COLOR['PHP']}?style={BADGE_STYLE}&logo=php",
     }
 
+
 def update_readme(badges):
-    readme_template = '''<div align="center">
+    readme_template = """<div align="center">
   <h1>🏆 LeetCode Solutions</h1>
   
   Solutions to [LeetCode](https://leetcode.com/problemset/all/) problems
@@ -106,11 +110,12 @@ To add or improve solutions:
 
 ## 📜 License
 Licensed under the [MIT License](./LICENSE).
-'''
+"""
     content = readme_template.format(**badges)
-    
+
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(content)
+
 
 if __name__ == "__main__":
     solved = count_solutions()
@@ -119,7 +124,9 @@ if __name__ == "__main__":
     update_readme(badges)
 
     print("\n🚀 README Badges Updated Successfully!\n")
-    print(f"📊 Solved: {solved}/{TOTAL_PROBLEMS} ({round((solved / TOTAL_PROBLEMS) * 100, 2)}%)\n")
+    print(
+        f"📊 Solved: {solved}/{TOTAL_PROBLEMS} ({round((solved / TOTAL_PROBLEMS) * 100, 2)}%)\n"
+    )
     print("📌 Solutions by Language:")
     for lang, count in counts.items():
         print(f"   • {lang:<10}: {count} solutions")
