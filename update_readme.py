@@ -1,4 +1,7 @@
 import os
+import sys
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 TOTAL_PROBLEMS = 3907
 SOLUTIONS_FOLDER = "solutions"
