@@ -5,7 +5,7 @@
   
   ---
   
-  ![LeetCode Progress](https://img.shields.io/badge/Solved-653%2F3935%20(16.59%25)-323232?style=flat-square&logo=leetcode)
+  ![LeetCode Progress](https://img.shields.io/badge/Solved-655%2F3935%20(16.65%25)-323232?style=flat-square&logo=leetcode)
   <br/>
   ![Python](https://img.shields.io/badge/Python%203-600%20solutions-60A4FB?style=flat-square&logo=python)
   ![Java](https://img.shields.io/badge/Java-108%20solutions-4298E2?style=flat-square&logo=java)
@@ -16,7 +16,7 @@
   ![C](https://img.shields.io/badge/C-0%20solutions-555555?style=flat-square&logo=c)
   ![C#](https://img.shields.io/badge/C%23-0%20solutions-9B4F96?style=flat-square&logo=csharp)
   ![PHP](https://img.shields.io/badge/PHP-0%20solutions-777BB4?style=flat-square&logo=php)
-  ![MySQL](https://img.shields.io/badge/MySQL-28%20solutions-BAE6FD?style=flat-square&logo=mysql)
+  ![MySQL](https://img.shields.io/badge/MySQL-30%20solutions-BAE6FD?style=flat-square&logo=mysql)
   
   ---
 </div>
