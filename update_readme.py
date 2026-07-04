@@ -3,7 +3,7 @@ import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-TOTAL_PROBLEMS = 3977
+TOTAL_PROBLEMS = 3981
 SOLUTIONS_FOLDER = "solutions"
 
 BADGE_STYLE = "flat-square"
