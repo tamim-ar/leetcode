@@ -5,10 +5,10 @@
   
   ---
   
-  ![LeetCode Progress](https://img.shields.io/badge/Solved-775%2F4019%20(19.28%25)-323232?style=flat-square&logo=leetcode)
+  ![LeetCode Progress](https://img.shields.io/badge/Solved-782%2F4029%20(19.41%25)-323232?style=flat-square&logo=leetcode)
   <br/>
-  ![Python](https://img.shields.io/badge/Python%203-713%20solutions-60A4FB?style=flat-square&logo=python)
-  ![Java](https://img.shields.io/badge/Java-109%20solutions-4298E2?style=flat-square&logo=java)
+  ![Python](https://img.shields.io/badge/Python%203-719%20solutions-60A4FB?style=flat-square&logo=python)
+  ![Java](https://img.shields.io/badge/Java-110%20solutions-4298E2?style=flat-square&logo=java)
   ![TypeScript](https://img.shields.io/badge/TypeScript-31%20solutions-3178C6?style=flat-square&logo=typescript)
   ![JavaScript](https://img.shields.io/badge/JavaScript-1%20solutions-F7DF1E?style=flat-square&logo=javascript)
   <br/>
